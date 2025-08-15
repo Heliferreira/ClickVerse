@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClickVerse - Universo da Conversão</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255 255 255 / 0.1);
+      border-radius: 18px;
+      padding: 30px 35px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      font-size: 1.15rem;
+      color: #dce7f1cc;
+      margin-bottom: 35px;
+      font-weight: 500;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 auto 40px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+    ul li {
+      margin-bottom: 15px;
+      padding-left: 28px;
+      position: relative;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 12px;
+      padding: 15px 20px 15px 45px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00f260;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    ul li:hover {
+      background: rgba(255 255 255 / 0.3);
+    }
+    a.btn {
+      display: inline-block;
+      padding: 18px 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #00f260, #0575e6);
+      color: white;
+      border-radius: 40px;
+      box-shadow: 0 10px 20px #00f260aa;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    a.btn:hover {
+      box-shadow: 0 15px 35px #00f260ff;
+      transform: scale(1.05);
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    .projeto-lista {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .projeto-item {
+      background: rgba(255 255 255 / 0.12);
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      cursor: default;
+    }
+    .projeto-item:hover {
+      box-shadow: 0 14px 40px rgba(0,0,0,0.8);
+      transform: translateY(-6px);
+    }
+    .projeto-item strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #00f260;
+    }
+    .projeto-item .descricao {
+      margin-bottom: 12px;
+      color: #d4f8e8cc;
+      font-weight: 600;
+    }
+    .projeto-item .dor-solucao {
+      font-style: italic;
+      color: #a3f7c7aa;
+      font-weight: 500;
+    }
+    #contato {
+      background: rgba(255 255 255 / 0.1);
+      padding: 40px 25px;
+      border-radius: 30px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    #contato h2 {
+      margin-bottom: 35px;
+    }
+    #contato .btn-whatsapp,
+    #contato .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(45deg, #00f260, #0575e6);
+      color: white;
+      padding: 18px 42px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 15px 40px #00f260bb;
+      margin: 0 15px 15px 15px;
+      transition: box-shadow 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+    }
+    #contato .btn-whatsapp:hover,
+    #contato .btn-instagram:hover {
+      box-shadow: 0 25px 60px #00f260ff;
+      transform: scale(1.07);
+    }
+    #contato p {
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #d4f8e8cc;
+      font-weight: 600;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #contato img.icon {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 0 0.4px black);
+    }
+
+    /* Footer */
+    footer {
+      margin: 40px 15px 15px 15px;
+      color: #94ffb2cc;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 700px) {
+      .container {
+        padding: 25px 20px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .projeto-lista {
+        grid-template-columns: 1fr;
+      }
+      #contato .btn-whatsapp,
+      #contato .btn-instagram {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <img src="./ClickVerse-Photoroom.png" alt="Logo ClickVerse" />
+    <div class="slogan">Universo da Conversão</div>
+  </header>
+
+  <section id="inicio" class="container">
+    <h1>Automação WhatsApp que conecta seus cliques à performance real</h1>
+    <p class="subtitle">Agendamentos, lembretes e atendimento 24h para clínicas, salões e serviços que precisam de confirmação automática e organização simples.</p>
+    <a href="https://wa.me/5511999998888" target="_blank" class="btn">Quero automatizar meu WhatsApp!</a>
+  </section>
+
+  <section id="sobre" class="container">
+    <h2>Quem somos</h2>
+    <p>Somos a ClickVerse — especialistas em automação via WhatsApp, transformando seu atendimento em uma experiência moderna, ágil e conectada ao universo da conversão digital.</p>
+  </section>
+
+  <section id="servico" class="container">
+    <h2>O que oferecemos</h2>
+    <ul>
+      <li>Envio automático de lembretes e confirmações de agendamento</li>
+      <li>Redução de faltas e aumento da satisfação do cliente</li>
+      <li>Respostas rápidas e personalizadas 24h por dia</li>
+      <li>Organização prática de clientes e histórico de atendimentos</li>
+      <li>Integração simples com agendas e sistemas atuais</li>
+    </ul>
+  </section>
+
+  <section id="projetos" class="container">
+  <h2>Projetos & provas sociais</h2>
+
+  <div class="projeto-lista">
+    <div class="projeto-item">
+      <strong>Bot de atendimento para clínicas</strong>
+      <div class="descricao">Agendamento e dúvidas automatizadas para clínicas médicas e odontológicas.</div>
+      <div class="dor-solucao">Redução significativa de faltas e agilidade no atendimento ao paciente.</div>
+      <div class="autor">— Ana Paula, gerente da Clínica Vida</div>
+    </div>
+
+    <div class="projeto-item">
+      <strong>Bot para empresa de energia solar</strong>
+      <div class="descricao">Captação e filtragem automática de leads, com fila organizada e status atualizado em banco de dados.</div>
+      <div class="dor-solucao">Otimização do processo comercial e resposta rápida a clientes potenciais.</div>
+      <div class="autor">— Carlos Silva, diretor da RumoEnergy</div>
+    </div>
+
+    <div class="projeto-item">
+      <strong>Bot de agendamento para clínica odontológica</strong>
+      <div class="descricao">Agendamento automático e envio de lembretes via WhatsApp.</div>
+      <div class="dor-solucao">Diminuição do índice de faltas e maior organização da agenda.</div>
+      <div class="autor">— Mariana Souza, coordenadora da OdontoPlus</div>
+    </div>
+
+    <div class="projeto-item">
+      <strong>Bot para salão de beleza</strong>
+      <div class="descricao">Agendamento para serviços como unhas e sobrancelha, com notificações para cliente e profissional.</div>
+      <div class="dor-solucao">Facilidade na gestão de horários e melhora na experiência do cliente.</div>
+      <div class="autor">— Rosana Pereira, proprietário do Salão Beleza & Estilo</div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contato" class="container">
+    <h2>Contato rápido</h2>
+    <a href="https://wa.me/5541998164599" target="_blank" class="btn-whatsapp" aria-label="Contato WhatsApp" style="display: inline-flex; align-items: center; gap: 14px; background: linear-gradient(45deg, #00f260, #0575e6); color: #fff; padding: 16px 38px; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 15px 40px #00f260bb; margin: 0 15px 15px 15px; transition: box-shadow 0.3s ease, transform 0.25s ease; text-decoration: none;">
+      <img src="whatsapp-icon.png" alt="WhatsApp" style="width: 36px; height: 36px;" />
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/seuusuario" target="_blank" class="btn-instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; gap: 14px; background: linear-gradient(45deg, #00f260, #0575e6); color: #fff; padding: 16px 38px; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 15px 40px #00f260bb; margin: 0 15px 15px 15px; transition: box-shadow 0.3s ease, transform 0.25s ease; text-decoration: none;">
+      <img src="instagram-icon.png" alt="Instagram" style="width: 36px; height: 36px;" />
+      Instagram
+    </a>
+    <p>Fale conosco e descubra como a ClickVerse pode conectar seu negócio ao universo da conversão!</p>
+  </section>
+
+  <footer>
+    © 2025 ClickVerse - Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
