@@ -137,24 +137,25 @@
     }
     /* Quadro da imagem (controla a altura visível da imagem dentro do card) */
     .hero-media{
-      width:100%;
-      height: clamp(300px, 55vw, 520px); /* ajuste fino */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:14px;
-      overflow:hidden;                     /* nada vaza */
-      background: rgba(255,255,255,.06);   /* opcional */
-    }
-    /* Imagem preenche o quadro mantendo proporção e com respiro proporcional */
-    .hero-media .logo{
-      width:100%;
-      height:100%;
-      object-fit:contain;                  /* chave */
-      object-position:center;
-      display:block;
-      padding:4px;                        /* controle do “respiro” */
-    }
+  width: 100%;
+  height: clamp(340px, 60vw, 600px); /* controla só a altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06); /* pode manter ou remover */
+}
+
+.hero-media .logo{
+  width: 100%;
+  height: 100%;        /* agora a imagem ocupa toda a altura também */
+  object-fit: cover;   /* cobre o quadro inteiro */
+  object-position: center;
+  display: block;
+  padding: 0;          /* sem respiro interno */
+}
+
     /* Texto abaixo da imagem */
     .hero .slogan{
       margin-top:14px;
