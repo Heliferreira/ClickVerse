@@ -311,10 +311,12 @@
 /* Desktop */
 @media (min-width:1024px) {
   .logo {
-    display:block;
-    margin:0 auto;
-    max-width:280px;
-  }
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;   /* ocupa 80% da largura do card */
+  height: auto;     /* mantém a proporção da imagem */
+  min-height: 350px;
+}
 
 /* Ajuste da imagem no card */
 header.container {
