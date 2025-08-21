@@ -303,20 +303,31 @@
 .btn-pill svg{ width:26px; height:26px; display:block; }
 
 /* Mobile */
-@media (max-width:700px){
+@media (max-width:700px) {
   .contact-buttons{ gap:14px; }
   .btn-pill{ width:100%; justify-content:center; }
 }
+
+/* Desktop */
+@media (min-width:1024px) {
+  .logo {
+    display:block;
+    margin:0 auto;
+    max-width:280px;
+  }
+}
+
 
 </style>
 
 </head>
 <body>
 
-  <header class="container">
-    <img src="assets/ClickVerse.png" alt="Logo ClickVerse" />
-    <div class="slogan">Universo da Conversão</div>
-  </header>
+<header class="header">
+  <img src="assets/ClickVerse.png" alt="Logo ClickVerse" class="logo">
+  <div class="slogan">Universo da Conversão</div>
+</header>
+
 
   <section id="inicio" class="container">
     <h1>Automação WhatsApp que conecta seus cliques à performance real</h1>
