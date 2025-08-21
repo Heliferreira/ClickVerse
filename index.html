@@ -10,9 +10,7 @@
 
   <style>
     /* Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -80,9 +78,7 @@
       font-size: 1.3rem;
       font-weight: 700;
     }
-    ul li:hover {
-      background: rgba(255 255 255 / 0.3);
-    }
+    ul li:hover { background: rgba(255 255 255 / 0.3); }
     a.btn {
       display: inline-block;
       padding: 18px 40px;
@@ -95,13 +91,8 @@
       transition: box-shadow 0.3s ease, transform 0.2s ease;
       text-decoration: none;
     }
-    a.btn:hover {
-      box-shadow: 0 15px 35px #00f260ff;
-      transform: scale(1.05);
-    }
-    section {
-      margin-bottom: 50px;
-    }
+    a.btn:hover { box-shadow: 0 15px 35px #00f260ff; transform: scale(1.05); }
+    section { margin-bottom: 50px; }
     h2 {
       font-size: 1.9rem;
       margin-bottom: 25px;
@@ -127,26 +118,52 @@
       text-align: left;
       cursor: default;
     }
-    .projeto-item:hover {
-      box-shadow: 0 14px 40px rgba(0,0,0,0.8);
-      transform: translateY(-6px);
-    }
+    .projeto-item:hover { box-shadow: 0 14px 40px rgba(0,0,0,0.8); transform: translateY(-6px); }
     .projeto-item strong {
       display: block;
       margin-bottom: 10px;
       font-size: 1.3rem;
       color: #00f260;
     }
-    .projeto-item .descricao {
-      margin-bottom: 12px;
-      color: #d4f8e8cc;
-      font-weight: 600;
+    .projeto-item .descricao { margin-bottom: 12px; color: #d4f8e8cc; font-weight: 600; }
+    .projeto-item .dor-solucao { font-style: italic; color: #a3f7c7aa; font-weight: 500; }
+
+    /* ===== HERO (card inicial com imagem + texto) ===== */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
-    .projeto-item .dor-solucao {
-      font-style: italic;
-      color: #a3f7c7aa;
-      font-weight: 500;
+    /* Quadro da imagem (controla a altura visível da imagem dentro do card) */
+    .hero-media{
+      width:100%;
+      height: clamp(300px, 55vw, 520px); /* ajuste fino */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      overflow:hidden;                     /* nada vaza */
+      background: rgba(255,255,255,.06);   /* opcional */
     }
+    /* Imagem preenche o quadro mantendo proporção e com respiro proporcional */
+    .hero-media .logo{
+      width:100%;
+      height:100%;
+      object-fit:contain;                  /* chave */
+      object-position:center;
+      display:block;
+      padding:10px;                        /* controle do “respiro” */
+    }
+    /* Texto abaixo da imagem */
+    .hero .slogan{
+      margin-top:14px;
+      font-size:clamp(1rem, 1.8vw, 1.2rem);
+      font-weight:600;
+      color:#dce7f1;
+    }
+
+    /* ===== Contato ===== */
     #contato {
       background: rgba(255 255 255 / 0.1);
       padding: 40px 25px;
@@ -154,9 +171,7 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.7);
       text-align: center;
     }
-    #contato h2 {
-      margin-bottom: 35px;
-    }
+    #contato h2 { margin-bottom: 35px; }
     #contato .btn-whatsapp,
     #contato .btn-instagram {
       display: inline-flex;
@@ -187,11 +202,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    #contato img.icon {
-      width: 28px;
-      height: 28px;
-      filter: drop-shadow(0 0 0.4px black);
-    }
+    #contato img.icon { width: 28px; height: 28px; filter: drop-shadow(0 0 0.4px black); }
 
     /* Footer */
     footer {
@@ -203,160 +214,67 @@
       user-select: none;
     }
 
-     /* Mobile responsiveness */
-  @media (max-width: 700px) {
-    .container {
-      padding: 25px 20px;
-      border-radius: 16px;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-    h2 {
-      font-size: 1.6rem;
-    }
-    .projeto-lista {
-      grid-template-columns: 1fr;
-    }
-    #contato .btn-whatsapp,
-    #contato .btn-instagram {
-      width: 100%;
-      justify-content: center;
-      margin: 10px 0;
-    }
-  }
+    /* ===== Mobile ===== */
+    @media (max-width: 700px) {
+      .container { padding: 25px 20px; border-radius: 16px; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      .projeto-lista { grid-template-columns: 1fr; }
+      #contato .btn-whatsapp, #contato .btn-instagram {
+        width: 100%; justify-content: center; margin: 10px 0;
+      }
 
-  /* --- Ajustes extras para mobile --- */
-  @media (max-width: 700px) {
-    header img {
-      max-width: 80%;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
+      header img {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+      }
+      header .slogan {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #d4f8e8;
+        margin-bottom: 15px;
+      }
+      .container { text-align: center; }
+      ul { text-align: left; padding: 0; }
+      .projeto-item { text-align: center; }
+      .projeto-item strong { font-size: 1.2rem; }
+      #contato { text-align: center; }
+      footer { font-size: 0.8rem; }
     }
-    header .slogan {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #d4f8e8;
-      margin-bottom: 15px;
+
+    /* ===== Botões de contato extras (se usar) ===== */
+    .contact-buttons{
+      display:flex; gap:24px; justify-content:center; align-items:center; flex-wrap:wrap;
     }
-    .container {
-      padding: 20px;
-      text-align: center;
+    .btn-pill{
+      display:inline-flex; align-items:center; gap:12px; padding:18px 28px;
+      border-radius:999px; text-decoration:none; font-weight:700; font-size:1.15rem;
+      color:#fff; background:linear-gradient(45deg,#00f260,#0575e6);
+      box-shadow:0 12px 32px rgba(0,242,96,.35); transition:transform .2s, box-shadow .25s;
+      min-height:64px; line-height:1;
     }
-    ul {
-      text-align: left;
-      padding: 0;
+    .btn-pill:hover{ transform:translateY(-2px); box-shadow:0 18px 44px rgba(0,242,96,.55); }
+    .btn--wa{ background:linear-gradient(45deg,#10d25d,#1a9be6); }
+    .btn--ig{
+      background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+      box-shadow:0 12px 32px rgba(221,42,123,.35);
     }
-    .projeto-lista {
-      grid-template-columns: 1fr;
-    }
-    .projeto-item {
-      text-align: center;
-    }
-    .projeto-item strong {
-      font-size: 1.2rem;
-    }
-    #contato {
-      text-align: center;
-    }
-    #contato .btn-whatsapp,
-    #contato .btn-instagram {
-      width: 100%;
-      justify-content: center;
-      margin: 10px 0;
-    }
-    footer {
-      font-size: 0.8rem;
-    }
-}
-  /* ===== Contato: layout e botões ===== */
-.contact-buttons{
-  display:flex;
-  gap:24px;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.btn-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  padding:18px 28px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.15rem;
-  color:#fff;
-  background:linear-gradient(45deg,#00f260,#0575e6);
-  box-shadow:0 12px 32px rgba(0,242,96,.35);
-  transition:transform .2s, box-shadow .25s;
-  min-height:64px; line-height:1;
-}
-.btn-pill:hover{ transform:translateY(-2px); box-shadow:0 18px 44px rgba(0,242,96,.55); }
-.btn--wa{ background:linear-gradient(45deg,#10d25d,#1a9be6); }
-.btn--ig{
-  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  box-shadow:0 12px 32px rgba(221,42,123,.35);
-}
-.btn--ig:hover{ box-shadow:0 18px 44px rgba(221,42,123,.55); }
-.btn-pill svg{ width:26px; height:26px; display:block; }
+    .btn--ig:hover{ box-shadow:0 18px 44px rgba(221,42,123,.55); }
+    .btn-pill svg{ width:26px; height:26px; display:block; }
+    @media (max-width:700px) { .contact-buttons{ gap:14px; } .btn-pill{ width:100%; justify-content:center; } }
 
-/* Mobile */
-@media (max-width:700px) {
-  .contact-buttons{ gap:14px; }
-  .btn-pill{ width:100%; justify-content:center; }
-}
-
-/* Desktop */
-@media (min-width:1024px) {
-  .logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 80%;   /* ocupa 80% da largura do card */
-  height: auto;     /* mantém a proporção da imagem */
-  min-height: 350px;
-}
-
-/* Ajuste da imagem no card */
-header.container {
-  display: flex;
-  flex-direction: column; /* imagem em cima, texto embaixo */
-  align-items: center;    /* centraliza no eixo horizontal */
-  justify-content: center;
-  text-align: center;     /* garante que o texto também fique alinhado */
-}
-
-header.container img {
-  max-width: 80%;       /* controla a largura dentro do card */
-  max-height: 350px;    /* controla a altura máxima */
-  object-fit: contain;  /* mantém a proporção */
-  display: block;       /* garante centralização */
-  margin: 0 auto;       /* centraliza horizontalmente */
-}
-
-
-header.container .slogan {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #dce7f1;
-}
-
-
-}
-
-
-</style>
-
+  </style>
 </head>
 <body>
 
-<header class="container hero">
-  <img src="assets/ClickVerse.png?v=3" alt="Logo ClickVerse" class="logo">
-  <div class="slogan">Universo da Conversão</div>
-</header>
-
-
+  <header class="container hero">
+    <div class="hero-media">
+      <img src="assets/ClickVerse.png?v=3" alt="Logo ClickVerse" class="logo">
+    </div>
+    <div class="slogan">Universo da Conversão</div>
+  </header>
 
   <section id="inicio" class="container">
     <h1>Automação WhatsApp que conecta seus cliques à performance real</h1>
@@ -381,62 +299,50 @@ header.container .slogan {
   </section>
 
   <section id="projetos" class="container">
-  <h2>Projetos & provas sociais</h2>
-
-  <div class="projeto-lista">
-    <div class="projeto-item">
-      <strong>Bot de atendimento para clínicas</strong>
-      <div class="descricao">Agendamento e dúvidas automatizadas para clínicas médicas e odontológicas.</div>
-      <div class="dor-solucao">Redução significativa de faltas e agilidade no atendimento ao paciente.</div>
-      <div class="autor">— Ana Paula, gerente da Clínica Vida</div>
+    <h2>Projetos & provas sociais</h2>
+    <div class="projeto-lista">
+      <div class="projeto-item">
+        <strong>Bot de atendimento para clínicas</strong>
+        <div class="descricao">Agendamento e dúvidas automatizadas para clínicas médicas e odontológicas.</div>
+        <div class="dor-solucao">Redução significativa de faltas e agilidade no atendimento ao paciente.</div>
+        <div class="autor">— Ana Paula, gerente da Clínica Vida</div>
+      </div>
+      <div class="projeto-item">
+        <strong>Bot para empresa de energia solar</strong>
+        <div class="descricao">Captação e filtragem automática de leads, com fila organizada e status atualizado em banco de dados.</div>
+        <div class="dor-solucao">Otimização do processo comercial e resposta rápida a clientes potenciais.</div>
+        <div class="autor">— Carlos Silva, diretor da RumoEnergy</div>
+      </div>
+      <div class="projeto-item">
+        <strong>Bot de agendamento para clínica odontológica</strong>
+        <div class="descricao">Agendamento automático e envio de lembretes via WhatsApp.</div>
+        <div class="dor-solucao">Diminuição do índice de faltas e maior organização da agenda.</div>
+        <div class="autor">— Mariana Souza, coordenadora da OdontoPlus</div>
+      </div>
+      <div class="projeto-item">
+        <strong>Bot para salão de beleza</strong>
+        <div class="descricao">Agendamento para serviços como unhas e sobrancelha, com notificações para cliente e profissional.</div>
+        <div class="dor-solucao">Facilidade na gestão de horários e melhora na experiência do cliente.</div>
+        <div class="autor">— Rosana Pereira, proprietário do Salão Beleza & Estilo</div>
+      </div>
     </div>
-
-    <div class="projeto-item">
-      <strong>Bot para empresa de energia solar</strong>
-      <div class="descricao">Captação e filtragem automática de leads, com fila organizada e status atualizado em banco de dados.</div>
-      <div class="dor-solucao">Otimização do processo comercial e resposta rápida a clientes potenciais.</div>
-      <div class="autor">— Carlos Silva, diretor da RumoEnergy</div>
-    </div>
-
-    <div class="projeto-item">
-      <strong>Bot de agendamento para clínica odontológica</strong>
-      <div class="descricao">Agendamento automático e envio de lembretes via WhatsApp.</div>
-      <div class="dor-solucao">Diminuição do índice de faltas e maior organização da agenda.</div>
-      <div class="autor">— Mariana Souza, coordenadora da OdontoPlus</div>
-    </div>
-
-    <div class="projeto-item">
-      <strong>Bot para salão de beleza</strong>
-      <div class="descricao">Agendamento para serviços como unhas e sobrancelha, com notificações para cliente e profissional.</div>
-      <div class="dor-solucao">Facilidade na gestão de horários e melhora na experiência do cliente.</div>
-      <div class="autor">— Rosana Pereira, proprietário do Salão Beleza & Estilo</div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <section id="contato" class="container">
-  <h2>Contato rápido</h2>
+    <h2>Contato rápido</h2>
+    <div class="botoes-contato">
+      <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp" aria-label="Contato WhatsApp">
+        <img src="assets/whatsapp.png?v=2" alt="WhatsApp" class="icon" />
+        WhatsApp
+      </a>
+      <a href="https://www.instagram.com/_clickverse/" target="_blank" rel="noopener" class="btn-contato btn-instagram" aria-label="Instagram">
+        <img src="assets/instagram.png?v=2" alt="Instagram" class="icon" />
+        Instagram
+      </a>
+    </div>
+    <p>Fale conosco e descubra como a ClickVerse pode conectar seu negócio ao universo da conversão!</p>
+  </section>
 
-  <div class="botoes-contato">
-    <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp" aria-label="Contato WhatsApp">
-      <img src="assets/whatsapp.png?v=2" alt="WhatsApp" class="icon" />
-      WhatsApp
-    </a>
-
-    <a href="https://www.instagram.com/_clickverse/" target="_blank" rel="noopener" class="btn-contato btn-instagram" aria-label="Instagram">
-      <img src="assets/instagram.png?v=2" alt="Instagram" class="icon" />
-      Instagram
-    </a>
-  </div>
-
-  <p>Fale conosco e descubra como a ClickVerse pode conectar seu negócio ao universo da conversão!</p>
-</section>
-
-
-  <footer>
-    © 2025 ClickVerse - Todos os direitos reservados
-  </footer>
-
+  <footer>© 2025 ClickVerse - Todos os direitos reservados</footer>
 </body>
 </html>
