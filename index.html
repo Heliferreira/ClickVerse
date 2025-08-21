@@ -319,19 +319,24 @@
 /* Ajuste da imagem no card */
 header.container {
   display: flex;
+  flex-direction: column; /* imagem em cima, texto embaixo */
+  align-items: center;    /* centraliza no eixo horizontal */
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  text-align: center;     /* garante que o texto também fique alinhado */
 }
 
 header.container img {
-  max-width: 220px;   /* controla a largura máxima da imagem */
-  height: auto;       /* mantém a proporção automática */
-  object-fit: contain; /* garante que a imagem não distorça */
-  border-radius: 12px; /* opcional, deixa cantos arredondados */
-  display: block;
-  margin: 0 auto;     /* centraliza */
+  max-width: 200px;  /* ajuste o tamanho da logo */
+  height: auto;      /* mantém proporção */
+  margin-bottom: 10px; /* espaço entre imagem e texto */
 }
+
+header.container .slogan {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #dce7f1;
+}
+
 
 }
 
