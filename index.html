@@ -326,10 +326,13 @@ header.container {
 }
 
 header.container img {
-  max-width: 200px;  /* ajuste o tamanho da logo */
-  height: auto;      /* mantém proporção */
-  margin-bottom: 10px; /* espaço entre imagem e texto */
+  max-width: 80%;       /* controla a largura dentro do card */
+  max-height: 350px;    /* controla a altura máxima */
+  object-fit: contain;  /* mantém a proporção */
+  display: block;       /* garante centralização */
+  margin: 0 auto;       /* centraliza horizontalmente */
 }
+
 
 header.container .slogan {
   font-size: 1rem;
