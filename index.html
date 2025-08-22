@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ClickVerse - Universo da Conversão</title>
 
-  <!-- Google Fonts: Poppins -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -23,10 +24,11 @@
       scroll-behavior: smooth;
     }
 
+    /* ===== Container padrão ===== */
     .container {
       max-width: 720px;
       width: 100%;
-      background: rgba(255 255 255 / 0.1);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 18px;
       padding: 30px 35px;
       box-shadow: 0 15px 25px rgba(0,0,0,0.5);
@@ -35,39 +37,20 @@
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.1;
-      background: linear-gradient(90deg, #00f260, #0575e6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 25px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00f260, #0575e6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
-    }
-
-    /* ===== HERO (card inicial com imagem + texto) ===== */
+    /* ===== HERO (card principal) ===== */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      max-width: 576px;   /* 20% menor que 720px */
+      padding: 20px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
       text-align: center;
     }
 
-    .hero .logo {
-      width: 80%;          /* reduzido 20% em relação ao anterior */
-      max-width: 500px;
+    .hero img {
+      width: 90%;       /* proporcional dentro do card */
       height: auto;
-      border-radius: 18px; /* cantos iguais aos outros cards */
+      border-radius: 18px; /* bordas arredondadas iguais ao card */
       display: block;
       margin: 0 auto;
     }
@@ -79,78 +62,133 @@
       color: #dce7f1;
     }
 
-    /* ===== Contato ===== */
-    #contato {
-      background: rgba(255 255 255 / 0.1);
-      padding: 25px 20px;  /* 20% menor */
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    /* ===== Serviços ===== */
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-align: center;
     }
 
-    #contato .bot-img {
-      width: 70%;        /* proporcional dentro do card */
-      max-width: 220px;
-      height: auto;
-      border-radius: 18px; /* mesma borda do card */
-      margin: 0 auto 15px;
-      display: block;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 40px auto;
+      max-width: 600px;
+      text-align: left;
     }
 
-    #contato .btn-whatsapp,
-    #contato .btn-instagram {
-      display: inline-flex;
+    ul li {
+      margin-bottom: 15px;
+      padding: 15px 20px 15px 45px;
+      position: relative;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00f260;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    /* ===== Projetos ===== */
+    .projeto-lista {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .projeto-item {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .projeto-item strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #00f260;
+    }
+
+    .projeto-item .descricao { margin-bottom: 12px; color: #d4f8e8cc; font-weight: 600; }
+    .projeto-item .dor-solucao { font-style: italic; color: #a3f7c7aa; font-weight: 500; }
+
+    /* ===== Contato ===== */
+    #contato {
+      background: rgba(255,255,255,0.1);
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    #contato img.bot-img {
+      max-width: 140px;
+      height: auto;
+      border-radius: 14px;
+      margin-bottom: 15px;
+    }
+
+    /* Botões de contato */
+    .botoes-contato {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-contato {
+      display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       background: linear-gradient(45deg, #00f260, #0575e6);
       color: white;
-      padding: 15px 35px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      box-shadow: 0 15px 40px #00f260bb;
-      margin: 0 10px 15px 10px;
-      transition: box-shadow 0.3s ease, transform 0.25s ease;
-      text-decoration: none;
-    }
-
-    #contato .btn-whatsapp:hover,
-    #contato .btn-instagram:hover {
-      box-shadow: 0 25px 60px #00f260ff;
-      transform: scale(1.07);
-    }
-
-    #contato p {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #d4f8e8cc;
+      padding: 14px 28px;
       font-weight: 600;
-      max-width: 450px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Footer */
+    .btn-contato img.icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .btn-contato:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,242,96,0.6);
+    }
+
+    /* ===== Footer ===== */
     footer {
       margin: 40px 15px 15px 15px;
       color: #94ffb2cc;
       font-weight: 500;
       font-size: 0.9rem;
       text-align: center;
-      user-select: none;
-    }
-
-    /* Responsivo */
-    @media (max-width: 700px) {
-      .container { padding: 25px 20px; border-radius: 16px; }
-      .hero .logo { width: 95%; max-width: none; }
-      h2 { font-size: 1.6rem; }
-      #contato { padding: 20px 15px; }
-      #contato .bot-img { width: 80%; max-width: 180px; }
-      #contato .btn-whatsapp, #contato .btn-instagram {
-        width: 100%; justify-content: center; margin: 10px 0;
-      }
-      footer { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -158,11 +196,11 @@
 
   <!-- HERO -->
   <header class="container hero">
-    <img src="assets/ClickVerse.png?v=3" alt="Logo ClickVerse" class="logo">
+    <img src="assets/ClickVerse.png?v=3" alt="Logo ClickVerse">
     <div class="slogan">Universo da Conversão</div>
   </header>
 
-  <!-- SERVIÇO -->
+  <!-- SERVIÇOS -->
   <section id="servico" class="container">
     <h2>O que oferecemos</h2>
     <ul>
@@ -186,21 +224,9 @@
       </div>
       <div class="projeto-item">
         <strong>Bot para empresa de energia solar</strong>
-        <div class="descricao">Captação e filtragem automática de leads, com fila organizada e status atualizado em banco de dados.</div>
-        <div class="dor-solucao">Otimização do processo comercial e resposta rápida a clientes potenciais.</div>
+        <div class="descricao">Captação e filtragem automática de leads.</div>
+        <div class="dor-solucao">Otimização do processo comercial e resposta rápida.</div>
         <div class="autor">— Carlos Silva, diretor da RumoEnergy</div>
-      </div>
-      <div class="projeto-item">
-        <strong>Bot de agendamento para clínica odontológica</strong>
-        <div class="descricao">Agendamento automático e envio de lembretes via WhatsApp.</div>
-        <div class="dor-solucao">Diminuição do índice de faltas e maior organização da agenda.</div>
-        <div class="autor">— Mariana Souza, coordenadora da OdontoPlus</div>
-      </div>
-      <div class="projeto-item">
-        <strong>Bot para salão de beleza</strong>
-        <div class="descricao">Agendamento para serviços como unhas e sobrancelha, com notificações para cliente e profissional.</div>
-        <div class="dor-solucao">Facilidade na gestão de horários e melhora na experiência do cliente.</div>
-        <div class="autor">— Rosana Pereira, proprietário do Salão Beleza & Estilo</div>
       </div>
     </div>
   </section>
@@ -209,20 +235,18 @@
   <section id="contato" class="container">
     <img src="assets/ClickVersebot.png" alt="ClickVerse Bot" class="bot-img">
     <h2>Contato rápido</h2>
+
     <div class="botoes-contato">
-      <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp" aria-label="Contato WhatsApp">
-        <img src="assets/whatsapp.png?v=2" alt="WhatsApp" class="icon" />
-        WhatsApp
+      <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp">
+        <img src="assets/whatsapp.png?v=2" alt="WhatsApp" class="icon" /> WhatsApp
       </a>
-      <a href="https://www.instagram.com/_clickverse/" target="_blank" rel="noopener" class="btn-contato btn-instagram" aria-label="Instagram">
-        <img src="assets/instagram.png?v=2" alt="Instagram" class="icon" />
-        Instagram
+      <a href="https://www.instagram.com/_clickverse/" target="_blank" class="btn-contato btn-instagram">
+        <img src="assets/instagram.png?v=2" alt="Instagram" class="icon" /> Instagram
       </a>
     </div>
-    <p>Fale conosco e descubra como a ClickVerse pode conectar seu negócio ao universo da conversão!</p>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- FOOTER -->
   <footer>© 2025 ClickVerse - Todos os direitos reservados</footer>
 
 </body>
