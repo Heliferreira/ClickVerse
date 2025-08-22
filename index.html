@@ -1,253 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClickVerse - Universo da Conversão</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      scroll-behavior: smooth;
-    }
-
-    /* ===== Container padrão ===== */
-    .container {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 30px 35px;
-      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    /* ===== HERO (card principal) ===== */
-    .hero {
-      max-width: 576px;   /* 20% menor que 720px */
-      padding: 20px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-      text-align: center;
-    }
-
-    .hero img {
-      width: 90%;       /* proporcional dentro do card */
-      height: auto;
-      border-radius: 18px; /* bordas arredondadas iguais ao card */
-      display: block;
-      margin: 0 auto;
-    }
-
-    .hero .slogan {
-      margin-top: 14px;
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      font-weight: 600;
-      color: #dce7f1;
-    }
-
-    /* ===== Serviços ===== */
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 25px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00f260, #0575e6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 40px auto;
-      max-width: 600px;
-      text-align: left;
-    }
-
-    ul li {
-      margin-bottom: 15px;
-      padding: 15px 20px 15px 45px;
-      position: relative;
-      font-weight: 600;
-      font-size: 1.1rem;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-    }
-
-    ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #00f260;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    /* ===== Projetos ===== */
-    .projeto-lista {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .projeto-item {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 25px 20px;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: left;
-    }
-
-    .projeto-item strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      color: #00f260;
-    }
-
-    .projeto-item .descricao { margin-bottom: 12px; color: #d4f8e8cc; font-weight: 600; }
-    .projeto-item .dor-solucao { font-style: italic; color: #a3f7c7aa; font-weight: 500; }
-
-    /* ===== Contato ===== */
-    #contato {
-      background: rgba(255,255,255,0.1);
-      padding: 30px 20px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      text-align: center;
-    }
-
-    #contato img.bot-img {
-      max-width: 140px;
-      height: auto;
-      border-radius: 14px;
-      margin-bottom: 15px;
-    }
-
-    /* Botões de contato */
-    .botoes-contato {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn-contato {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(45deg, #00f260, #0575e6);
-      color: white;
-      padding: 14px 28px;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 50px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-contato img.icon {
-      width: 22px;
-      height: 22px;
-    }
-
-    .btn-contato:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0,242,96,0.6);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      margin: 40px 15px 15px 15px;
-      color: #94ffb2cc;
-      font-weight: 500;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page - Automação WhatsApp</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="container hero">
-    <img src="assets/ClickVerse.png?v=3" alt="Logo ClickVerse">
-    <div class="slogan">Universo da Conversão</div>
+  <!-- HEADER -->
+  <header>
+    <h1>Automatize seu WhatsApp</h1>
+    <p>Transforme conversas em clientes de forma inteligente</p>
   </header>
 
-  <!-- SERVIÇOS -->
-  <section id="servico" class="container">
-    <h2>O que oferecemos</h2>
-    <ul>
-      <li>Envio automático de lembretes e confirmações de agendamento</li>
-      <li>Redução de faltas e aumento da satisfação do cliente</li>
-      <li>Respostas rápidas e personalizadas 24h por dia</li>
-      <li>Organização prática de clientes e histórico de atendimentos</li>
-      <li>Integração simples com agendas e sistemas atuais</li>
-    </ul>
+  <!-- CARD PRINCIPAL -->
+  <section class="principal">
+    <div class="card-principal">
+      <img src="img/ClickVersebot.png" alt="Automação WhatsApp">
+      <h2>Tenha o poder da automação no seu negócio</h2>
+      <p>Com nossa solução você economiza tempo e aumenta suas vendas.</p>
+    </div>
   </section>
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="container">
-    <h2>Projetos & provas sociais</h2>
-    <div class="projeto-lista">
-      <div class="projeto-item">
-        <strong>Bot de atendimento para clínicas</strong>
-        <div class="descricao">Agendamento e dúvidas automatizadas para clínicas médicas e odontológicas.</div>
-        <div class="dor-solucao">Redução significativa de faltas e agilidade no atendimento ao paciente.</div>
-        <div class="autor">— Ana Paula, gerente da Clínica Vida</div>
+  <!-- O QUE OFERECEMOS -->
+  <section class="oferecemos">
+    <h2>O que oferecemos</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>Respostas Automáticas</h3>
+        <p>Atenda seus clientes mesmo quando não estiver online.</p>
       </div>
-      <div class="projeto-item">
-        <strong>Bot para empresa de energia solar</strong>
-        <div class="descricao">Captação e filtragem automática de leads.</div>
-        <div class="dor-solucao">Otimização do processo comercial e resposta rápida.</div>
-        <div class="autor">— Carlos Silva, diretor da RumoEnergy</div>
+      <div class="card">
+        <h3>Integrações</h3>
+        <p>Conecte com outros sistemas e amplie suas possibilidades.</p>
+      </div>
+      <div class="card">
+        <h3>Escalabilidade</h3>
+        <p>Suporte para milhares de mensagens por dia.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="container">
-    <img src="assets/ClickVersebot.png" alt="ClickVerse Bot" class="bot-img">
-    <h2>Contato rápido</h2>
+  <!-- PROVAS SOCIAIS -->
+  <section class="provas-sociais">
+    <h2>Quem já confia em nós</h2>
+    <div class="cards-container">
+      <div class="card social"><p>Cliente 1 - Aumentou vendas em 40%</p></div>
+      <div class="card social"><p>Cliente 2 - Reduziu custos com atendimento</p></div>
+      <div class="card social"><p>Cliente 3 - Responde 3x mais rápido</p></div>
+      <div class="card social"><p>Cliente 4 - Mais leads qualificados</p></div>
+      <div class="card social"><p>Cliente 5 - Crescimento em escala</p></div>
+      <div class="card social"><p>Cliente 6 - Atendimento 24/7</p></div>
+    </div>
+  </section>
 
-    <div class="botoes-contato">
-      <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp">
-        <img src="assets/whatsapp.png?v=2" alt="WhatsApp" class="icon" /> WhatsApp
-      </a>
-      <a href="https://www.instagram.com/_clickverse/" target="_blank" class="btn-contato btn-instagram">
-        <img src="assets/instagram.png?v=2" alt="Instagram" class="icon" /> Instagram
-      </a>
+  <!-- CARD FINAL -->
+  <section class="final">
+    <div class="card-final">
+      <img src="img/ClickVersebot.jpg" alt="Entre em Contato">
+      <h2>Fale agora com a gente</h2>
+      <div class="botoes">
+    <a href="https://wa.me/5541998164599" class="btn whatsapp">
+    <img src="assets/whatsapp.png" alt="WhatsApp" class="icon"> WhatsApp</a>
+    <a href="https://instagram.com/_clickverse" class="btn instagram">
+    <img src="assets/instagram.png" alt="Instagram" class="icon"> Instagram</a>
+</div>
+
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>© 2025 ClickVerse - Todos os direitos reservados</footer>
+  <footer>
+    <p>© 2025 Automação WhatsApp - Todos os direitos reservados</p>
+  </footer>
 
 </body>
 </html>

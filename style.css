@@ -1,0 +1,134 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  padding: 2rem;
+  background: #25D366;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* CARD PRINCIPAL */
+.principal {
+  padding: 2rem;
+}
+
+.card-principal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-principal img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* O QUE OFERECEMOS */
+.oferecemos {
+  padding: 2rem;
+}
+
+.oferecemos h2 {
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* PROVAS SOCIAIS */
+.provas-sociais {
+  padding: 2rem;
+  background: #eee;
+}
+
+.provas-sociais h2 {
+  margin-bottom: 1rem;
+}
+
+/* CARD FINAL */
+.final {
+  padding: 2rem;
+}
+
+.card-final {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-final img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.whatsapp {
+  background: #25D366;
+}
+
+.btn.instagram {
+  background: #E4405F;
+}
+
+/* FOOTER */
+footer {
+  padding: 1rem;
+  background: #25D366;
+  color: #fff;
+  margin-top: 2rem;
+}
