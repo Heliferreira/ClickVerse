@@ -1,79 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - Automação WhatsApp</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automação de WhatsApp para Clínicas e Salões</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #222;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 650px;
+      margin: 40px auto;
+      background: white;
+      padding: 35px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    h1 {
+      color: #2c7a7b;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      color: #4a5568;
+      font-size: 1.15rem;
+      margin-bottom: 35px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    ul li {
+      margin-bottom: 18px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    ul li::before {
+      content: '✔️';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: #2c7a7b;
+      font-size: 1.3rem;
+    }
+    .testimonial {
+      background: #e6fffa;
+      border-left: 6px solid #2c7a7b;
+      padding: 20px 25px;
+      margin-bottom: 35px;
+      font-style: italic;
+      text-align: left;
+      border-radius: 6px;
+      color: #2c7a7b;
+      box-shadow: 0 2px 10px rgba(44, 122, 123, 0.15);
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: #234f50;
+    }
+    a.btn {
+      background: #2c7a7b;
+      color: white;
+      padding: 18px 28px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      display: inline-block;
+      transition: background 0.3s ease;
+      box-shadow: 0 5px 15px rgba(44, 122, 123, 0.4);
+    }
+    a.btn:hover {
+      background: #285e5f;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Automação de WhatsApp para Clínicas, Salões e Serviços de Agendamento</h1>
+    <p class="subtitle">
+      Nunca mais perca clientes por falta de confirmação ou esquecimento de horários. Automatize lembretes, confirmações e agendamentos pelo WhatsApp.
+    </p>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Automatize seu WhatsApp</h1>
-    <p>Transforme conversas em clientes de forma inteligente</p>
-  </header>
+    <ul>
+      <li>Envio automático de lembretes e confirmações de agendamento</li>
+      <li>Reduza faltas e aumente a satisfação dos clientes</li>
+      <li>Respostas rápidas e personalizadas, 24 horas por dia</li>
+      <li>Organização prática dos clientes e histórico de atendimentos</li>
+      <li>Integração fácil com seu sistema atual ou agenda manual</li>
+    </ul>
 
-  <!-- CARD PRINCIPAL -->
-  <section class="principal">
-    <div class="card-principal">
-      <img src="img/ClickVersebot.png" alt="Automação WhatsApp">
-      <h2>Tenha o poder da automação no seu negócio</h2>
-      <p>Com nossa solução você economiza tempo e aumenta suas vendas.</p>
+    <div class="testimonial">
+      “Antes da automação, perdíamos muitos clientes que esqueciam seus horários. Agora, com o WhatsApp automático, nossa clínica reduziu faltas em 40%.”  
+      <strong>- Dra. Mariana, Clínica Odonto Vida</strong>
     </div>
-  </section>
 
-  <!-- O QUE OFERECEMOS -->
-  <section class="oferecemos">
-    <h2>O que oferecemos</h2>
-    <div class="cards-container">
-      <div class="card">
-        <h3>Respostas Automáticas</h3>
-        <p>Atenda seus clientes mesmo quando não estiver online.</p>
-      </div>
-      <div class="card">
-        <h3>Integrações</h3>
-        <p>Conecte com outros sistemas e amplie suas possibilidades.</p>
-      </div>
-      <div class="card">
-        <h3>Escalabilidade</h3>
-        <p>Suporte para milhares de mensagens por dia.</p>
-      </div>
+    <div class="testimonial">
+      “Meu salão nunca esteve tão organizado. Os lembretes automáticos pelo WhatsApp diminuíram os atrasos e ajudaram a fidelizar os clientes.”  
+      <strong>- Lucas, Salão Beleza & Estilo</strong>
     </div>
-  </section>
 
-  <!-- PROVAS SOCIAIS -->
-  <section class="provas-sociais">
-    <h2>Quem já confia em nós</h2>
-    <div class="cards-container">
-      <div class="card social"><p>Cliente 1 - Aumentou vendas em 40%</p></div>
-      <div class="card social"><p>Cliente 2 - Reduziu custos com atendimento</p></div>
-      <div class="card social"><p>Cliente 3 - Responde 3x mais rápido</p></div>
-      <div class="card social"><p>Cliente 4 - Mais leads qualificados</p></div>
-      <div class="card social"><p>Cliente 5 - Crescimento em escala</p></div>
-      <div class="card social"><p>Cliente 6 - Atendimento 24/7</p></div>
-    </div>
-  </section>
+    <a href="https://wa.me/seunumerodetelefone" target="_blank" class="btn">
+      Quero automatizar meu WhatsApp agora!
+    </a>
 
-  <!-- CARD FINAL -->
-  <section class="final">
-    <div class="card-final">
-      <img src="img/ClickVersebot.jpg" alt="Entre em Contato">
-      <h2>Fale agora com a gente</h2>
-      <div class="botoes">
-    <a href="https://wa.me/5541998164599" class="btn whatsapp">
-    <img src="assets/whatsapp.png" alt="WhatsApp" class="icon"> WhatsApp</a>
-    <a href="https://instagram.com/_clickverse" class="btn instagram">
-    <img src="assets/instagram.png" alt="Instagram" class="icon"> Instagram</a>
-</div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Automação WhatsApp - Todos os direitos reservados</p>
-  </footer>
-
+    <footer>
+      © 2025 Seu Nome ou Sua Empresa — Automação WhatsApp
+    </footer>
+  </div>
 </body>
 </html>
