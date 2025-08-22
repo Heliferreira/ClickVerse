@@ -281,19 +281,26 @@
   margin: 0 auto 20px; /* centralizada e com espaço embaixo */
   border-radius: 14px; /* arredondada como o card */
 }
-body {
-  border: 5px solid red;
+ /* Estilização do card de contato */
+.contato-card {
+  display: flex;
+  justify-content: center;   /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+  text-align: center;        /* Garante que o texto fique centralizado */
+  flex-direction: column;    /* Faz imagem ficar em cima e texto embaixo */
+  padding: 20px;
+}
+
+/* Ajuste da imagem do bot */
+.bot-img {
+  max-width: 80%;     /* Ajusta para caber dentro do card */
+  height: auto;       /* Mantém proporção */
+  margin-bottom: 15px; /* Espaço entre a imagem e o texto */
 }
 
 
+
   </style>
-
-  <style>
-  body {
-    border: 5px solid red;
-  }
-</style>
-
 </head>
 <body>
 
@@ -346,11 +353,15 @@ body {
     </div>
   </section>
 
+  
   <!-- CONTATO (único card com imagem do bot) -->
-  <section id="contato" class="container">
+<section id="contato" class="container contato-card">
+  <div class="card-conteudo">
     <img src="assets/ClickVersebot.png" alt="ClickVerse Bot" class="bot-img">
-
     <h2>Contato rápido</h2>
+  </div>
+</section>
+
 
     <div class="botoes-contato">
       <a href="https://wa.me/5541998164599" target="_blank" class="btn-contato btn-whatsapp" aria-label="Contato WhatsApp">
