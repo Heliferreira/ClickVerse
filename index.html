@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Click Verse - Automação WhatsApp</title>
   <style>
-    /* Fonte moderna */
     body {
       font-family: 'Poppins', Arial, sans-serif;
       background: #0b0f1a;
@@ -15,53 +14,75 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 60px auto;
-      background: rgba(15, 20, 35, 0.95);
-      padding: 50px 40px;
-      border-radius: 16px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-      border: 1px solid rgba(0, 255, 136, 0.3);
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+      font-size: 2.3rem;
+      margin-bottom: 25px;
       background: linear-gradient(90deg, #00ff88, #00e0ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     p.subtitle {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 40px;
       color: #b0b0b0;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 40px;
+    /* Card principal */
+    .main-card {
+      background: rgba(15, 20, 35, 0.95);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
+    }
+
+    .main-card img {
+      max-width: 250px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Cards de serviços */
+    .service-card {
+      background: rgba(20, 25, 40, 0.95);
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 224, 255, 0.2);
+      box-shadow: 0 0 15px rgba(0, 224, 255, 0.1);
       text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    ul li {
-      margin-bottom: 18px;
-      padding-left: 35px;
-      position: relative;
-      font-size: 1.1rem;
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.25);
     }
 
-    ul li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: #00ff88;
+    .service-card span {
       font-size: 1.3rem;
-      text-shadow: 0 0 10px #00ff88;
+      color: #00ff88;
+      text-shadow: 0 0 8px #00ff88;
     }
 
+    .service-card p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    /* Depoimentos */
     .testimonial {
       background: rgba(0, 224, 255, 0.08);
       border-left: 6px solid #00e0ff;
@@ -71,6 +92,7 @@
       color: #e0f7ff;
       font-style: italic;
       box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+      text-align: left;
     }
 
     .testimonial strong {
@@ -80,6 +102,7 @@
       color: #00ffcc;
     }
 
+    /* Botão CTA */
     a.btn {
       background: linear-gradient(90deg, #00ff88, #00e0ff);
       color: #0b0f1a;
@@ -91,6 +114,7 @@
       display: inline-block;
       transition: all 0.3s ease;
       box-shadow: 0 0 20px rgba(0, 255, 136, 0.6), 0 0 40px rgba(0, 224, 255, 0.4);
+      margin: 30px 0;
     }
 
     a.btn:hover {
@@ -98,45 +122,40 @@
       box-shadow: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 224, 255, 0.6);
     }
 
+    /* Rodapé */
     footer {
       margin-top: 40px;
+      padding: 20px;
       font-size: 0.9rem;
-      color: #666;
+      color: #aaa;
+      text-align: center;
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Automação de WhatsApp que conecta seus cliques à performance real</h1>
-    <p class="subtitle">
-      Agendamentos, lembretes e confirmações 24h para clínicas, salões e serviços que precisam de organização automatizada e simples.
-    </p>
 
-    <ul>
-      <li>Envio automático de lembretes e confirmações de agendamento</li>
-      <li>Reduza faltas e aumente a satisfação dos clientes</li>
-      <li>Respostas rápidas e personalizadas, 24 horas por dia</li>
-      <li>Organização prática dos clientes e histórico de atendimentos</li>
-      <li>Integração fácil com seu sistema atual ou agenda manual</li>
-    </ul>
+    .contact-buttons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-    <div class="testimonial">
-      “Antes da automação, perdíamos muitos clientes que esqueciam seus horários. Agora, com o WhatsApp automático, nossa clínica reduziu faltas em 40%.”  
-      <strong>- Dra. Mariana, Clínica Odonto Vida</strong>
-    </div>
+    .contact-buttons a {
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-    <div class="testimonial">
-      “Meu salão nunca esteve tão organizado. Os lembretes automáticos pelo WhatsApp diminuíram os atrasos e ajudaram a fidelizar os clientes.”  
-      <strong>- Lucas, Salão Beleza & Estilo</strong>
-    </div>
+    .contact-buttons a.whatsapp {
+      background: #25d366;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+    }
 
-    <a href="https://wa.me/seunumerodetelefone" target="_blank" class="btn">
-      🚀 Quero automatizar meu WhatsApp agora!
-    </a>
+    .contact-buttons a.whatsapp:hover {
+      background: #1da851;
+      transform: translateY(-3px);
+    }
 
-    <footer>
-      © 2025 Click Verse — Automação & Landing Pages
-    </footer>
-  </div>
-</body>
-</html>
+    .contact-buttons a.instagram {
+      b
