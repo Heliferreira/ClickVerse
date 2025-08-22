@@ -20,9 +20,25 @@
       text-align: center;
     }
 
+    /* Card principal */
+    .main-card {
+      background: rgba(15, 20, 35, 0.95);
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
+    }
+
+    .main-card img {
+      max-width: 280px;
+      display: block;
+      margin: 0 auto;
+    }
+
     h1 {
       font-size: 2.3rem;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       background: linear-gradient(90deg, #00ff88, #00e0ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -32,22 +48,6 @@
       font-size: 1.15rem;
       margin-bottom: 40px;
       color: #b0b0b0;
-    }
-
-    /* Card principal */
-    .main-card {
-      background: rgba(15, 20, 35, 0.95);
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 16px;
-      border: 1px solid rgba(0, 255, 136, 0.3);
-      box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
-    }
-
-    .main-card img {
-      max-width: 250px;
-      display: block;
-      margin: 0 auto;
     }
 
     /* Cards de serviços */
@@ -169,15 +169,17 @@
 </head>
 <body>
   <div class="container">
+
+    <!-- Card principal com a logo -->
+    <div class="main-card">
+      <img src="ClickVerse.png" alt="Click Verse Logo">
+    </div>
+
+    <!-- Texto principal -->
     <h1>Automação de WhatsApp que conecta seus cliques à performance real</h1>
     <p class="subtitle">
       Agendamentos, lembretes e confirmações 24h para clínicas, salões e serviços que precisam de organização automatizada e simples.
     </p>
-
-    <!-- Card principal com imagem -->
-    <div class="main-card">
-      <img src="ClickVerse.png" alt="Click Verse Logo">
-    </div>
 
     <!-- 5 Cards de serviços -->
     <div class="service-card">
