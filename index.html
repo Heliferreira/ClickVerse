@@ -131,15 +131,25 @@
     /* ===== HERO (card inicial com imagem + texto) ===== */
     .hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;         /* fundo do card */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra suave */
 
-  /* ajustes de altura do card */
-  padding: 20px 20px;   /* espaço interno em cima/baixo */
-  max-height: 500px;    /* limite de altura do card */
-  overflow: hidden;     /* corta o que passar da altura */
+  /* controle da altura */
+  max-width: 600px;         /* largura máxima do card */
+  margin: 0 auto;           /* centraliza na página */
 }
+
+.hero img {
+  width: 100%;              /* ocupa toda largura */
+  height: auto;             /* mantém proporção */
+  border-radius: 10px;      /* bordas arredondadas na imagem */
+  display: block;           /* remove espaçamento fantasma */
+}
+
 
    
     /* Texto abaixo da imagem */
