@@ -23,17 +23,26 @@
     /* Card principal */
     .main-card {
       background: rgba(15, 20, 35, 0.95);
-      padding: 30px;
+      padding: 20px;
       margin-bottom: 40px;
       border-radius: 16px;
       border: 1px solid rgba(0, 255, 136, 0.3);
       box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
     }
 
-    .main-card img {
-      max-width: 280px;
+    /* Wrapper para controlar a imagem */
+    .image-wrapper {
+      width: 100%;
+      height: 380px;         /* altura definida do card da imagem */
+      overflow: hidden;      /* corta os excessos */
+      border-radius: 16px;   /* arredonda igual ao card */
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* preenche o espaço sem deformar */
       display: block;
-      margin: 0 auto;
     }
 
     h1 {
@@ -172,7 +181,9 @@
 
     <!-- Card principal com a logo -->
     <div class="main-card">
-      <img src="assets/ClickVerse.png" alt="Click Verse Logo">
+      <div class="image-wrapper">
+        <img src="assets/ClickVerse.png" alt="Click Verse Logo">
+      </div>
     </div>
 
     <!-- Texto principal -->
