@@ -190,7 +190,81 @@
   display: block;  
 
     }
+  
+    /* Card compacto do rodapé */
+.footer-card {
+  background: rgba(15, 20, 35, 0.95);
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);
+  text-align: center;
+  max-width: 500px;  /* menor que os outros cards */
+  margin-left: auto;
+  margin-right: auto;
+}
 
+/* Imagem do bot no card */
+.footer-bot {
+  max-width: 120px;   /* dobro do tamanho da logo do topo (60px lá em cima) */
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* Botões dentro do card */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-buttons a {
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espaço entre ícone e texto */
+  transition: 0.3s;
+}
+
+.contact-buttons a .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* WhatsApp */
+.contact-buttons a.whatsapp {
+  background: #25d366;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.contact-buttons a.whatsapp:hover {
+  background: #1da851;
+  transform: translateY(-3px);
+}
+
+/* Instagram */
+.contact-buttons a.instagram {
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+  box-shadow: 0 0 15px rgba(214, 41, 118, 0.6);
+}
+
+.contact-buttons a.instagram:hover {
+  transform: translateY(-3px);
+}
+
+/* Copyright fora do card */
+footer {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
 
   </style>
 </head>
@@ -216,7 +290,7 @@
   </p>
 
   <!-- Botão CTA (só aqui, não no final da página) -->
-  <a href="https://wa.me/seunumerodetelefone" target="_blank" class="btn">
+  <a href="https://wa.me/5541998164599" target="_blank" class="btn">
     🚀 Quero automatizar meu WhatsApp agora!
   </a>
 
@@ -281,14 +355,24 @@
 
   
 
-    <!-- Rodapé -->
-    <footer>
-      <div class="contact-buttons">
-        <a href="https://wa.me/seunumerodetelefone" target="_blank" class="whatsapp">WhatsApp</a>
-        <a href="https://instagram.com/seuperfil" target="_blank" class="instagram">Instagram</a>
-      </div>
-      © 2025 Click Verse — Automação & Landing Pages
-    </footer>
+  <!-- Card compacto do rodapé -->
+<div class="footer-card">
+  <!-- Imagem do bot -->
+  <img src="assets/ClickVersebot.png" alt="Click Verse Bot" class="footer-bot">
+
+  <!-- Botões sociais -->
+  <div class="contact-buttons">
+    <a href="https://wa.me/5541998164599" target="_blank" class="whatsapp">
+      <img src="assets/whatsapp.png" alt="WhatsApp" class="icon"> WhatsApp
+    </a>
+    <a href="https://instagram.com/_clickverse" target="_blank" class="instagram">
+      <img src="assets/instagram.png" alt="Instagram" class="icon"> Instagram
+    </a>
   </div>
-</body>
-</html>
+</div>
+
+<!-- Copyright fora do card -->
+<footer>
+  © 2025 Click Verse — Automação & Landing Pages
+</footer>
+
