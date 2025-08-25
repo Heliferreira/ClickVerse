@@ -241,43 +241,41 @@ p.subtitle {
   text-align: center;
 }
 
-/* Mascote no topo do card */
+/* Ajustes finais rodapé */
 .footer-bot {
-  max-width: 120px;  /* tamanho ajustado */
-  margin: 0 auto 5px auto; /* quase encostado na logo */
+  margin: 0 auto 5px auto;   /* quase colado na logo */
   display: block;
+  max-width: 120px;
 }
 
-/* Logo abaixo do mascote */
 .footer-logo {
-  max-width: 300px; /* bem visível */
-  margin: 5px auto 15px auto; /* cola no mascote, afasta mais dos botões */
+  margin: 5px auto 15px auto; /* mais perto do mascote, mas com espaço pros botões */
   display: block;
+  max-width: 300px;
 }
 
-/* Botões centralizados logo abaixo da logo */
 .contact-buttons {
-  margin-top: 10px; /* menor espaço da logo pros botões */
+  margin-top: 10px;          /* afasta um pouco da logo */
   display: flex;
   justify-content: center;
-  gap: 15px; /* espaço entre WhatsApp e Instagram */
+  gap: 15px;
 }
 
 .contact-buttons a {
-  padding: 10px 18px;
+  padding: 10px 18px;        /* garante botões “gordinhos” */
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px; /* ícone + texto */
+  gap: 8px;                  /* espaço entre ícone e texto */
 }
-
 
 .contact-buttons a .icon {
-  width: 18px;
+  width: 18px;   /* tamanho fixo dos ícones */
   height: 18px;
 }
+
 
 /* WhatsApp */
 .contact-buttons a.whatsapp {
