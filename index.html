@@ -13,6 +13,39 @@
       padding: 0;
     }
 
+    /* Logo principal */
+.company-logo img {
+  max-width: 300px;   /* tamanho da logo */
+  margin: 20px auto 10px auto; /* menos espaço em cima */
+  display: block;
+}
+
+/* Texto principal */
+h1.main-title {
+  font-size: 2.3rem;
+  margin: 10px 0 15px 0;  /* aproxima mais da logo e do subtítulo */
+  background: linear-gradient(90deg, #00ff88, #00e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p.subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 30px; /* espaço entre subtítulo e card do mascote */
+  color: #b0b0b0;
+}
+
+/* Card do mascote */
+.main-card {
+  background: rgba(15, 20, 35, 0.95);
+  padding: 20px;
+  margin: 0 auto 40px auto;  /* tiramos o margin-top que empurrava pra baixo */
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
+}
+
+
     .container {
       max-width: 900px;
       margin: 60px auto;
@@ -271,23 +304,24 @@ footer {
 <body>
   <div class="container">
 
-  <!-- Logo da empresa acima do card -->
+  <!-- Logo principal -->
   <div class="company-logo">
     <img src="assets/ClickVerselogo.png" alt="Logo Click Verse">
   </div>
 
-  <!-- Card principal com mascote -->
-  <div class="main-card">
-    <img src="assets/ClickVerse.png" alt="Click Verse Mascote" class="logo">
-  </div>
-
-  <!-- Texto principal -->
+  <!-- Texto principal agora vem logo abaixo da logo -->
   <h1 class="main-title">
-    Automação de WhatsApp que conecta seus cliques à performance real
+    Você pequeno e médio empresário, está com dificuldades em gerênciar suas conversas no whatsapp?
   </h1>
   <p class="subtitle">
     Agendamentos, lembretes e confirmações 24h para clínicas, salões e serviços que precisam de organização automatizada e simples.
   </p>
+
+  <!-- Card principal com mascote (desceu uma posição) -->
+  <div class="main-card">
+    <img src="assets/ClickVerse.png" alt="Click Verse Mascote" class="logo">
+  </div>
+
 
   <!-- Botão CTA (só aqui, não no final da página) -->
   <a href="https://wa.me/5541998164599" target="_blank" class="btn">
